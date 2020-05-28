@@ -1,0 +1,18 @@
+*{
+    margin: 0; padding: 0;
+}
+th#row1 {
+    width: 250px;
+}
+th#row2 {
+    width: 300px;
+}
+th#row3 {
+    width: 300px;
+}
+th#row4 {
+    width: 100px;
+}
+th#row5 {
+    width: 100px;
+}

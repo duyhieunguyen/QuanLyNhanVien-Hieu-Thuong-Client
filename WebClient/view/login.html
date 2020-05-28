@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Login</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="bg-img">
+		<div class="content">	
+			<header>ĐĂNG NHẬP</header>
+			<form id="form-login" action="#">
+				<div class="field">
+					<span class="fa fa-user"></span>
+					<input id="userName" class="form-control" type="text" required="" placeholder="Tên tài khoản"
+						oninvalid="setCustomValidity('Vui lòng nhập tài khoản')" oninput="setCustomValidity('')">
+					</input>
+				</div>
+				<div class="field space">
+					<span class="fa fa-lock"></span>
+					<input id="password" class="form-control pass-key" type="password" required="" placeholder="Mật khẩu"
+						oninvalid="setCustomValidity('Vui lòng nhập password')" oninput="setCustomValidity('')">
+					</input>
+					<span class="show">SHOW</span>
+				</div>
+				<div class="pass">
+					<a href="#">Quên mật khẩu?</a>
+				</div>
+				<div class="field">
+					<input type="submit" value="LOGIN" id="login" onclick="xu_ly_login()">
+				</div>
+			</form>
+			<div class="login">
+				Đăng nhập với:</div>
+			<div class="links">
+				<div class="facebook">
+					<!-- <i class="fab fa-facebook-f"><span>Facebook</span></i> -->
+					<div class="fa fa-envelope"><span> Gmail </span></div>
+
+				</div>
+			</div>
+			<div class="signup">
+				Bạn chưa có tài khoảng? <br>
+				<a href="#">Đăng ký</a>
+			</div>
+		</div>
+	</div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+		<script src="/Js/data.js"></script>
+	<script src="/js/login.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
