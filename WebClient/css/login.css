@@ -115,19 +115,19 @@
   color: white;
   margin: 0 0 20px 0;
 }
-.facebook,.instagram{
+.Gmail,.instagram{
   width: 100%;
   height: 45px;
   line-height: 45px;
   margin-left: 10px;
 }
-.facebook{
+.Gmail{
   margin-left: 0;
   background: #F4511E;
   border: 1px solid #F2400D;
 }
 
-.facebook:hover{
+.Gmail:hover{
   background: #F2400D;
 }
 .links i{
