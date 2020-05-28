@@ -42,6 +42,21 @@ function load_data()
     </tr>`
   });
   myTable.innerHTML=html;
+
+}
+function Dong_y_them() {
+  var account = {};
+  account.Password=addPassword.value;
+  account.Role=addRole.value;
+  account.UserName=addUserName.value;
+
+  var obj = {};
+  obj.Account=account;
+ 
+  obj.Email = addEmail.value;
+  document.getElementById("Close_item").click();
+  Them_Nguoi_Dung(obj);
+  load_data();
 }
 
 
