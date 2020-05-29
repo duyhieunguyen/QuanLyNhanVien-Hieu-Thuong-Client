@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Login</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<div class="bg-img">
+	<div class="content">
+		<header>ĐĂNG NHẬP</header>
+		<form id="form-login" action="#">
+			<div class="field">
+				<span class="fa fa-user"></span>
+				<input id="UserName" class="form-control" type="text" required="" placeholder="Tên tài khoản"
+					oninvalid="setCustomValidity('Vui lòng nhập tài khoản')" oninput="setCustomValidity('')">
+				</input>
+			</div>
+			<div class="field space">
+				<span class="fa fa-lock"></span>
+				<input id="Password" class="form-control pass-key" type="password" required="" placeholder="Mật khẩu"
+					oninvalid="setCustomValidity('Vui lòng nhập password')" oninput="setCustomValidity('')">
+				</input>
+				<span class="show">SHOW</span>
+			</div>
+			<div class="pass">
+				<a href="#" data-toggle="modal" data-target="#modelIdForgetPassword">Quên mật khẩu?</a>
+			</div>
+			<div class="field">
+				<input type="submit" value="LOGIN" id="login" onclick="dang_nhap()">
+			</div>
+		</form>
+		<div class="login">
+			Đăng nhập với:</div>
+		<div class="links">
+			<div class="Gmail">
+				<!-- <i class="fab fa-facebook-f"><span>Facebook</span></i> -->
+				<!-- <div class="fa fa-envelope" onclick="login_google()"><span> Gmail</span></div> -->
+				<button type="button" class="btn fa fa-envelope btn-block" onclick="loginGoogle()"><span>
+						Gmail</span></button>
+			</div>
+		</div>
+		<div class="signup">
+			Bạn chưa có tài khoảng? <br>
+			<a href="/views/register.html">Đăng ký</a>
+		</div>
+	</div>
+</div>
+
+ <!-- Modal ForgetPassword-->
+ <div class="modal fade" id="modelIdForgetPassword" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Nhập Email</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" class="form-control" name="" id="Email" aria-describedby="helpId" placeholder="">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="closeEmail" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="forget_Password()">Reset Password</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Register Info For Google -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" id="modalRegisterGoogle" data-target="#modelIdRegisterGoogle" hidden>
+    RegisterGoogle
+  </button>
+    <div class="modal fade" id="modelIdRegisterGoogle" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nhập thông tin để hoàn tất đăng ký</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="EmailGoogle">Email</label>
+                        <input type="text"
+                          class="form-control" name="" id="EmailGoogle" aria-describedby="helpId" placeholder="" readonly>
+                      </div>
+                    <div class="form-group">
+                      <label for="FullNameGoogle">FullName</label>
+                      <input type="text"
+                        class="form-control" name="" id="FullNameGoogle" aria-describedby="helpId" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="PasswordGoogle">Password</label>
+                        <input type="text"
+                          class="form-control" name="" id="PasswordGoogle" aria-describedby="helpId" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="Re_passwordGoogle">Re_password</label>
+                        <input type="text"
+                          class="form-control" name="" id="Re_passwordGoogle" aria-describedby="helpId" placeholder="">
+                      </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="dang_ky_google()" >Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<script src="/js/data.js"></script>
+<script src="/js/login.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+<script src="/js/data.js"></script>
+<script src="/js/login.js"></script>
+<!-- <script src="/js/register.js"></script> -->
+<script src="/js/forgetPassword.js"></script>
+
+
+
+</body>
+
+</html>

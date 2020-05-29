@@ -39,7 +39,7 @@
     <div class="container-fuide">
         <div class="row">
             <div class="col-sm-3 bg-primary heght1" style="text-align: center;height: 530px;">
-                <img class="rounded-circle mt-3" src="/img/94975799_563246997653225_3276177959349649408_n.jpg" alt="">
+                <img class="rounded-circle mt-3" src="/images/94975799_563246997653225_3276177959349649408_n.jpg" alt="">
                 <div id="FullName_out" class="mt-2">FullName</div>
                 <div id="Email_out" class="mt-2">Email</div>
             </div>
@@ -54,14 +54,8 @@
                             <th id="row5">Edit</th>
                         </tr>
                     </thead>
-                    <tbody id="myTable">
-                        <tr>
-                            <td scope="row">h</td>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>d</td>
-                        </tr>
+                    <tbody id="content">
+                        
                     </tbody>
                 </table>
             </div>
@@ -69,8 +63,45 @@
     </div>
     </div>
 
+    <!-- Modal Sửa -->
+  <div class="modal fade" id="modelIdSua" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sửa Employee</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="UserName">Username</label>
+            <input type="text" class="form-control" name="" id="UserName" aria-describedby="helpId" placeholder=""
+              readonly>
+
+          </div>
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" name="" id="Password" aria-describedby="helpId" placeholder="">
+
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" class="form-control" name="" id="Email" aria-describedby="helpId" placeholder=""
+              readonly>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="closeSua" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="DongYSua()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     
-    <!-- Modal -->
+    <!-- Modal Thêm-->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -117,7 +148,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
         <script src="/js/data.js"></script>
-        <script src="/js/home.js"></script>
+        <script src="/js/Home.js"></script>
 
 </body>
 
