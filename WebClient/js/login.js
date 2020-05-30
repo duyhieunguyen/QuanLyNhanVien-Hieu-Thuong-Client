@@ -2,7 +2,7 @@ var object = JSON.parse(localStorage.getItem("user"));
 if (object) {
     if (object.Role == "admin") {
         console.log(object.Role)
-        document.location.href = "/views/home.html"
+        document.location.href = "/views/home_employee.html"
     }
 }
 
@@ -14,7 +14,7 @@ function dang_nhap() {
     if (kq != 'loginfalse') {
         localStorage.setItem("user", JSON.stringify(kq))
         alert("Đăng nhập thành công!!!")
-        document.location.href = "/views/home.html"
+        document.location.href = "/views/home_employee.html"
     } else {
         alert("Đăng nhập thất bại!!!")
     }
@@ -51,7 +51,7 @@ function loginGoogle() {
         if (kq != 'loginGoogleFalse') {
             localStorage.setItem("user", JSON.stringify(kq))
             alert("Đăng nhập thành công!!!")
-            document.location.href = "/views/home.html"
+            document.location.href = "/views/home_employee.html"
         }
         else {
             document.getElementById("modalRegisterGoogle").click();
@@ -92,7 +92,7 @@ function dang_ky_google() {
     if (kq != 'loginGoogleFalse') {
         localStorage.setItem("user", JSON.stringify(kq))
         alert("Đăng nhập thành công!!!")
-        document.location.href = "/views/home.html"
+        document.location.href = "/views/home_employee.html"
     }
 
 }
