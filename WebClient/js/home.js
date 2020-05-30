@@ -44,9 +44,9 @@ function DongYSua() {
     var emp = {};
     emp.Account = acc;
     emp.Email = Email.value;
-    emp.Role = "admin"
     document.getElementById("closeSua").click();
     Sua_Tai_Khoan_Nhan_Vien(emp)
+    console.log(typeof(Sua_Tai_Khoan_Nhan_Vien(emp)))
     load_data()
 }
 
