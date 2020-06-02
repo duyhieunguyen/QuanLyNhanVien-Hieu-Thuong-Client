@@ -20,7 +20,7 @@
   <!-- Custom styles for this template -->
   <link href="/css/style.css" rel="stylesheet">
   <link href="/css/style-responsive.css" rel="stylesheet">
-  
+
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
@@ -40,12 +40,14 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a class="logo"  href="/views/home_employee.html"><img src="https://giadinh.edu.vn/s-img/logo-dai-hoc-gia-dinh.png?v-2" alt="" srcset="" style="width:10% ;"><b>GIA DINH<span> University</span></b></a>
+      <a class="logo" href="/views/home_employee.html"><img
+          src="https://giadinh.edu.vn/s-img/logo-dai-hoc-gia-dinh.png?v-2" alt="" srcset="" style="width:10% ;"><b>GIA
+          DINH<span> University</span></b></a>
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           <li>
-            <a class="logout" href="/views/login.html">Đăng xuất</a>
+            <a class="logout" href="#" onclick="dang_xuat()">Đăng xuất</a>
           </li>
         </ul>
       </div>
@@ -62,37 +64,37 @@
           <p class="centered">
             <a href="#"><img src="/images/thuong.jpg" class="img-circle" width="80"></a>
           </p>
-          <h5 class="centered">Thương</h5>
+          <h5 class="centered" id="FullName_Info"></h5>
           <li class="sub-menu">
             <a href="/views/home_employee.html" class="active">
-              <i class="fa fa-th" ></i>
+              <i class="fa fa-th"></i>
               <span>Nhân viên</span></a>
-              <ul class="sub">
-                <li><a href="/views/home_employee.html">Danh sách nhân viên</a></li>
-                <li><a href="/views/add_employee.html">Thêm nhân viên</a></li>
-             </ul>
+            <ul class="sub">
+              <li><a href="/views/home_employee.html">Danh sách nhân viên</a></li>
+              <li><a href="/views/add_employee.html">Thêm nhân viên</a></li>
+            </ul>
           </li>
           <li class="sub-menu">
-            <a href="/views/calendar.html" >
-              <i class="fa fa-calendar" ></i>
+            <a href="/views/calendar.html">
+              <i class="fa fa-calendar"></i>
               <span>Lịch</span></a>
           </li>
           <li class="sub-menu">
             <a href="/views/chat_room.html">
               <i class="fa fa-comments-o"></i>
               <span> Chat Room</a>
-              </span>
-              </a>
+            </span>
+            </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-desktop"></i>
               <span>Cài Đặt</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="/views/change_password.html">Đổi mật khẩu</a></li>
               <li><a href="#">Khác</a></li>
-           </ul>
+            </ul>
           </li>
         </ul>
         <!-- sidebar menu end-->
@@ -115,28 +117,15 @@
                 <hr>
                 <thead>
                   <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                    <th></th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>FullName</th>
+                    <th>Role</th>
+                    <th>Edit</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td><button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button></td>
-                  </tr>
+                <tbody id="content_home_employee">
+
                 </tbody>
               </table>
             </div>
@@ -146,30 +135,80 @@
         <!-- /row -->
       </section>
     </section>
+
+    <!-- Modal Sửa -->
+    <div class="modal fade" id="modelIdSua" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Sửa Account</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="FullName">Fullname</label>
+              <input type="text" class="form-control" name="" id="FullName" aria-describedby="helpId" placeholder=""
+                >
+
+              <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" name="" id="Email" aria-describedby="helpId" placeholder=""
+                  readonly>
+
+              </div>
+              <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control" name="" id="Password" aria-describedby="helpId" readonly
+                  placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="Role">Role</label>
+                <select class="form-control" name=""  id="Role">
+                  <option value="manage">manage</option>
+                  <option value="employee">employee</option>
+                  <option value="admin">admin</option>
+                  <option value="user">user</option>
+                </select>
+              </div>
+              
+
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="closeSua" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="DongYSua()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
     <footer class="site-footer ">
       <div class="text-center">
         <p>
-          &copy; Thông tin liên hệ  <strong>Thương Nguyễn, Hiếu Nguyễn, Thanh Thanh</strong>. Thanks
+          &copy; Thông tin liên hệ <strong>Thương Nguyễn, Hiếu Nguyễn, Thanh Thanh</strong>. Thanks
         </p>
         <a href="/views/home_employee.html" class="go-top">
           <i class="fa fa-angle-up"></i>
-          </a> 
-        </footer>
+        </a>
+    </footer>
 
-  <script src="/lib/jquery/jquery.min.js"></script>
-  <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="/lib/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="/lib/jquery.scrollTo.min.js"></script>
-  <script src="/lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <!--common script for all pages-->
-  <script src="/lib/common-scripts.js"></script>
-  <script src="/js/data.js"></script>
-  <!-- <script src="/js/home.js"></script> -->
-  <!--script for this page-->
-  
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/lib/jquery.scrollTo.min.js"></script>
+    <script src="/lib/jquery.nicescroll.js" type="text/javascript"></script>
+    <!--common script for all pages-->
+    <script src="/lib/common-scripts.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/home.js"></script>
+    <!--script for this page-->
+
 </body>
 
 </html>

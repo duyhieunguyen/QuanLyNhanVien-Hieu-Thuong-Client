@@ -80,4 +80,4 @@ var Script = function () {
     });
 
 
-}();
+};

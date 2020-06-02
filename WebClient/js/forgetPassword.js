@@ -1,5 +1,6 @@
 var kq;
 function forget_Password() {
+
     if (Email.value == null || Email.value.trim() == "") {
         alert("Vui lòng nhập Email!!!");
     } else {
@@ -34,7 +35,7 @@ function reset_Password(){
         emp.Account = acc;
         emp.Email = email;
         document.getElementById("closeResetPassword").click();
-        Sua_Tai_Khoan_Nhan_Vien(emp)
+        Doi_Mat_Khau(emp)
         alert("Reset Password thành công !!!")     
     }
    

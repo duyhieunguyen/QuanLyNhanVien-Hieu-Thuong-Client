@@ -40,9 +40,11 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a class="logo"  href="/views/home_employee.html" ><img src="https://giadinh.edu.vn/s-img/logo-dai-hoc-gia-dinh.png?v-2" alt="" srcset=""style="width:10% ;"><b>GIA DINH<span> University</span></b></a>
+      <a class="logo" href="/views/home_employee.html"><img
+          src="https://giadinh.edu.vn/s-img/logo-dai-hoc-gia-dinh.png?v-2" alt="" srcset="" style="width:10% ;"><b>GIA
+          DINH<span> University</span></b></a>
       <!--logo end-->
-     
+
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
           <li><a class="logout" href="/views/login.html">Đăng xuất</a></li>
@@ -64,34 +66,34 @@
           <h5 class="centered">Thương</h5>
           <li class="sub-menu">
             <a href="/views/home_employee.html" class="active">
-              <i class="fa fa-th" ></i>
+              <i class="fa fa-th"></i>
               <span>Nhân viên</span></a>
-              <ul class="sub">
-                <li><a href="/views/home_employee.html">Danh sách nhân viên</a></li>
-                <li><a href="/views/add_employee.html">Thêm nhân viên</a></li>
-             </ul>
+            <ul class="sub">
+              <li><a href="/views/home_employee.html">Danh sách nhân viên</a></li>
+              <li><a href="/views/add_employee.html">Thêm nhân viên</a></li>
+            </ul>
           </li>
           <li class="sub-menu">
-            <a href="/views/calendar.html" >
-              <i class="fa fa-calendar" ></i>
+            <a href="/views/calendar.html">
+              <i class="fa fa-calendar"></i>
               <span>Lịch</span></a>
           </li>
           <li class="sub-menu">
             <a href="/views/chat_room.html">
               <i class="fa fa-comments-o"></i>
               <span> Chat Room</a>
-              </span>
-              </a>
+            </span>
+            </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-desktop"></i>
               <span>Cài Đặt</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="/views/change_password.html">Đổi mật khẩu</a></li>
               <li><a href="#">Khác</a></li>
-           </ul>
+            </ul>
           </li>
         </ul>
         <!-- sidebar menu end-->
@@ -112,41 +114,39 @@
               <div class="form">
                 <form class="cmxform form-horizontal style-form" id="signupForm" method="get" action="">
                   <div class="form-group ">
-                    <label for="firstname" class="control-label col-lg-2">Firstname</label>
+                    <label for="FullName" class="control-label col-lg-2">Fullname</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="firstname" name="firstname" type="text" />
+                      <input class=" form-control" id="FullName" name="FullName" type="text" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="lastname" class="control-label col-lg-2">Lastname</label>
+                    <label for="Email" class="control-label col-lg-2">Email</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="lastname" name="lastname" type="text" />
+                      <input class="form-control " id="Email" name="email" type="email" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">Username</label>
+                    <label for="Password" class="control-label col-lg-2">Password</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" name="username" type="text" />
+                      <input class="form-control " id="Password" name="password" type="password" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="password" class="control-label col-lg-2">Password</label>
+                    <label for="Confirm_password" class="control-label col-lg-2">Confirm Password</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="password" name="password" type="password" />
+                      <input class="form-control " id="Confirm_password" name="confirm_password" type="password" />
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="confirm_password" class="control-label col-lg-2">Confirm Password</label>
+                  <div class="form-group">
+                    <label for="Role" class="control-label col-lg-2">Role</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
+                      <select class="form-control" name="" id="Role">
+                        <option value="manage">manage</option>
+                        <option value="employee">employee</option>
+                      </select>
                     </div>
                   </div>
-                  <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">Email</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="email" name="email" type="email" />
-                    </div>
-                  </div>
+
                   <!-- <div class="form-group ">
                     <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy</label>
                     <div class="col-lg-10 col-sm-9">
@@ -161,9 +161,10 @@
                   </div> -->
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-4">
-                      <button class="btn btn-theme" type="submit">Lưu</button>
-                      <button class="btn btn-theme04" type="button">Hủy</button>
-                  </div>
+                      <button class="btn btn-theme" type="submit" onclick="DongYTao()">Tạo</button>
+                      <button class="btn btn-theme04" type="button" onclick="LamMoi()">Làm mới</button>
+
+                    </div>
                 </form>
               </div>
             </div>
@@ -181,11 +182,11 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Thông tin liên hệ  <strong>Thương Nguyễn, Hiếu Nguyễn, Thanh Thanh</strong>. Thanks
+          &copy; Thông tin liên hệ <strong>Thương Nguyễn, Hiếu Nguyễn, Thanh Thanh</strong>. Thanks
         </p>
         <a href="/views/home_employee.html" class="go-top">
           <i class="fa fa-angle-up"></i>
-          </a>
+        </a>
       </div>
     </footer>
     <!--footer end-->
@@ -200,6 +201,9 @@
   <script src="/lib/common-scripts.js"></script>
   <!--script for this page-->
   <script src="/lib/form-validation-script.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/add_employee.js"></script>
 
 </body>
+
 </html>

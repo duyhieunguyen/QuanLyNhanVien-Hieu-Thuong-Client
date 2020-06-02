@@ -17,19 +17,25 @@ function DongYThem() {
         var acc = {};
         //acc.Password = md5(Password.value);
         acc.Password = Password.value;
+        acc.Role = "admin"
         acc.UserName = Email.value;
         var sch = {}
-        sch.color = "do";
-        sch.content = "oke";
+        sch.color = "red";
+        sch.content = "Helloworld";
         var emp = {};
         emp.Account = acc;
-
-        emp.FullName = FullName.value;
+        emp.Address = ""
+        emp.BirthDate = ""
+        emp.DepartmentName = ""
         emp.Email = Email.value;
-        emp.Role = "admin"
+        emp.EmployeeId = ""
+        emp.FullName = FullName.value;
+        emp.Image = ""
+        emp.PhoneNumber = ""
+        emp.PositionName = ""
         emp.Schedules = [];
         emp.Schedules.push(sch);
-        kq = Them_Tai_Khoan_Nhan_Vien(emp);
+        kq = Them_Tai_Khoan_User(emp);
         if (kq.trim() == 'emailExist') {
             alert("Email đã tồn tại!!!")
         }else{

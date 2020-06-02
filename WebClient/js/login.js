@@ -1,7 +1,7 @@
 var object = JSON.parse(localStorage.getItem("user"));
 if (object) {
-    if (object.Role == "admin") {
-        console.log(object.Role)
+    if (object.Account.Role == "admin") {
+        console.log(object.Account.Role)
         document.location.href = "/views/home_employee.html"
     }
 }
@@ -74,6 +74,7 @@ function dang_ky_google() {
     var acc = {};
     //acc.Password = md5(Password.value);
     acc.Password = PasswordGoogle.value;
+    acc.Role = "user"
     acc.UserName = EmailGoogle.value;
     var sch = {}
     sch.color = "do";
@@ -82,7 +83,6 @@ function dang_ky_google() {
     emp.Account = acc;
     emp.Email = EmailGoogle.value;
     emp.FullName = FullNameGoogle.value;
-    emp.Role = "admin"
     emp.Schedules = [];
     emp.Schedules.push(sch);
     Dang_Ky_Google(emp);
