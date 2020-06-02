@@ -131,24 +131,38 @@ h2 {
 .clear {
   clear: both; }
 
-body {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #222;
-  font-weight: 400;
-  font-family: 'Montserrat';
-  background-image: url("../images/backgroundGDU.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  -ms-background-size: cover;
-  background-position: center center;
-  padding: 115px 0; }
+  .main{
+    background: url('https://giadinh.edu.vn/img/news/z1443256536610_82a90195cf72331dd8270544c50a3320-1589015091-medium.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .main:after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+   }
+   .signup{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    z-index: 999;
+    text-align: center;
+    padding: 15px 0px;
+    width: 579px;
+    transform: translate(-30%,-50%);
+    background: rgba(255,255,255,0.1);
+    box-shadow: 10px 4px 28px 0px rgba(0,0,0,0.75);
+   }
+
 
 .container {
-  width: 660px;
+  width: 580px;
   position: relative;
   margin: 0 auto; }
 
@@ -193,7 +207,9 @@ body {
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
   -ms-border-radius: 10px;
-  padding: 50px 85px; }
+  padding: 5px 55px; 
+  margin-top: 70px;
+}
 
 .form-group {
   overflow: hidden;
