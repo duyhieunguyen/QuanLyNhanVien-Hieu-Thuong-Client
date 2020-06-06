@@ -53,6 +53,18 @@ function Sua_Tai_Khoan_Nhan_Vien(Tai_Khoan) {
     return Kq
 }
 
+function Kiem_Tra_Mat_Khau_Cu(Email){
+    var Kq = ""
+    var Xu_ly_HTTP = new XMLHttpRequest()
+    var Tham_so = `ma_so_xu_ly=Kiem_Tra_Mat_Khau_Du_Firebase`
+    var Dia_chi_Xu_ly = `${Dia_chi_Dich_vu}?${Tham_so}`
+    Xu_ly_HTTP.open("POST", Dia_chi_Xu_ly, false)
+    var Chuoi_goi = JSON.stringify(Email)
+    Xu_ly_HTTP.send(Chuoi_goi)
+    Kq = Xu_ly_HTTP.responseText
+    return Kq
+}
+
 function Doi_Mat_Khau(Email){
     var Kq = ""
     var Xu_ly_HTTP = new XMLHttpRequest()

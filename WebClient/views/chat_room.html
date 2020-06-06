@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Chat</title>
+  <title>Chatroom</title>
 
   <!-- Favicons -->
   <link href="/images/favicon.png" rel="icon">
@@ -20,13 +20,8 @@
   <!-- Custom styles for this template -->
   <link href="/css/style.css" rel="stylesheet">
   <link href="/css/style-responsive.css" rel="stylesheet">
+  <link href="/css/chatroom.css" rel="stylesheet">
 
-  <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
-  ======================================================= -->
 </head>
 
 <body>
@@ -104,110 +99,85 @@
     <section id="main-content">
       <section class="wrapper site-min-height">
         <!-- page start-->
-        <div class="chat-room mt">
-          <aside class="mid-side">
-            <div class="chat-room-head">
-              <h3>Chat Room: Support</h3>
-              <form action="#" class="pull-right position">
-                <input type="text" placeholder="Search" class="form-control search-btn ">
+        <div class="container py-5 px-4">
+          <div class="row rounded-lg overflow-hidden shadow">
+            <!-- Users box-->
+            <div class="col-5 px-0">
+              <div class="bg-white">
+                <div class="bg-gray px-4 py-2 bg-light">
+                  <p class="h5 mb-0 py-1">Recent</p>
+                </div>
+                <div class="messages-box">
+                  <div class="list-group rounded-0">
+                    <a class="list-group-item list-group-item-action active text-white rounded-0">
+                      <div class="media"><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg"
+                          alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">25 Dec</small>
+                          </div>
+                          <p class="font-italic mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                            do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                      </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                      <div class="media"><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg"
+                          alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                          <div class="d-flex align-items-center justify-content-between mb-1">
+                            <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">14 Dec</small>
+                          </div>
+                          <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur.
+                            incididunt ut labore.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Chat Box-->
+            <div class="col-7 px-0" id="dataScroll">
+              <div class="px-4 py-5 chat-box bg-white" id="messages">
+                <!-- Sender Message-->
+                <!-- <div class="media w-50 mb-3"><img
+                    src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50"
+                    class="rounded-circle">
+                  <div class="media-body ml-3">
+                    <div class="bg-light rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-muted">Test which is a new approach all solutions</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div> -->
+      
+                <!-- Reciever Message-->
+                <!-- <div class="media w-50 ml-auto mb-3">
+                  <div class="media-body">
+                    <div class="bg-primary rounded py-2 px-3 mb-2">
+                      <p class="text-small mb-0 text-white">Test which is a new approach to have all solutions</p>
+                    </div>
+                    <p class="small text-muted">12:00 PM | Aug 13</p>
+                  </div>
+                </div> -->
+      
+              </div>
+      
+              <!-- Typing area -->
+              <form action="#" class="bg-light">
+                <div class="input-group">
+                  <input type="text" id="messaage" placeholder="Type a message" aria-describedby="button-addon2"
+                    class="form-control rounded-0 border-0 py-4 bg-light">
+                  <div class="input-group-append">
+                    <button id="button-addon2" type="button" onclick="sendMessage()" class="btn btn-link"> <i
+                        class="fa fa-paper-plane"></i>Submit</button>
+                  </div>
+                </div>
               </form>
+      
             </div>
-            <div class="group-rom">
-              <div class="first-part odd">Sam Soffes</div>
-              <div class="second-part">Hi Mark, have a minute?</div>
-              <div class="third-part">12:30</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part">Mark Simmons</div>
-              <div class="second-part">Of course Sam, what you need?</div>
-              <div class="third-part">12:31</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part odd">Sam Soffes</div>
-              <div class="second-part">I want you examine the new product</div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part">Mark Simmons</div>
-              <div class="second-part">Ok, send me the pic</div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part odd">Sam Soffes</div>
-              <div class="second-part">
-                <a href="#">product.jpg</a> <span class="text-muted">35.4KB</span>
-                <p><img class="img-responsive" src="img/product.jpg" alt=""></p>
-              </div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part">Mark Simmons</div>
-              <div class="second-part">Fantastic job, love it :)</div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom last-group">
-              <div class="first-part odd">Sam Soffes</div>
-              <div class="second-part">Thanks!!</div>
-              <div class="third-part">12:33</div>
-            </div>
-            <footer>
-              <div class="chat-txt">
-                <input type="text" class="form-control">
-              </div>
-              <div class="btn-group hidden-sm hidden-xs">
-                <button type="button" class="btn btn-white"><i class="fa fa-meh-o"></i></button>
-                <button type="button" class="btn btn-white"><i class=" fa fa-paperclip"></i></button>
-              </div>
-              <button class="btn btn-theme">Send</button>
-            </footer>
-          </aside>
-          <aside class="right-side">
-            <div class="user-head">
-              <a href="#" class="chat-tools btn-theme"><i class="fa fa-cog"></i> </a>
-              <a href="#" class="chat-tools btn-theme03"><i class="fa fa-key"></i> </a>
-            </div>
-            <div class="invite-row">
-              <h4 class="pull-left">Team Members</h4>
-              <a href="#" class="btn btn-theme04 pull-right">+ Invite</a>
-            </div>
-            <ul class="chat-available-user">
-              <li>
-                <a href="/views/chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-02.jpg" width="32">
-                  Paul Brown
-                  <span class="text-muted">1h:02m</span>
-                  </a>
-              </li>
-              <li>
-                <a href="/views/chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-05.jpg" width="32">
-                  David Duncan
-                  <span class="text-muted">1h:08m</span>
-                  </a>
-              </li>
-              <li>
-                <a href="/views/chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-07.jpg" width="32">
-                  Laura Smith
-                  <span class="text-muted">1h:10m</span>
-                  </a>
-              </li>
-              <li>
-                <a href="/views/chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-08.jpg" width="32">
-                  Julia Schultz
-                  <span class="text-muted">3h:00m</span>
-                  </a>
-              </li>
-              <li>
-                <a href="/views/chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-01.jpg" width="32">
-                  Frank Arias
-                  <span class="text-muted">4h:22m</span>
-                  </a>
-              </li>
-            </ul>
-          </aside>
+          </div>
         </div>
         <!-- page end-->
       </section>
@@ -236,6 +206,7 @@
   <!--common script for all pages-->
   <script src="/lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script src="/js/chatroom.js"></script>
 
 </body>
 

@@ -2,7 +2,7 @@
 var object = JSON.parse(localStorage.getItem("user"))
 if (object) {
     if (object.Account.Role == "admin") {
-  
+
     }
 }
 else {
@@ -10,6 +10,7 @@ else {
 }
 
 function Dong_Y_Doi_Mat_Khau() {
+    var kq;
     if (Password.value == null || Password.value.trim() == "") {
         alert("Vui lòng nhập Password cũ !!!");
     } else if (Password_New.value == null || Password_New.value.trim() == "") {
@@ -18,18 +19,26 @@ function Dong_Y_Doi_Mat_Khau() {
         alert("Vui lòng nhập Re_Password mới !!!");
     } else if (Password_New.value.trim() != Re_Password_New.value.trim()) {
         alert("Mật khẩu không khớp !!!")
-    }
-    else {
+    } else {
         var acc = {};
-        acc.Password = Password_New.value;
+        acc.Password = Password.value;
         var emp = {};
         emp.Account = acc;
         emp.Email = object.Email;
-        Doi_Mat_Khau(emp)
-        alert("Đổi mật khẩu thành công !!!")
+        kq = JSON.parse(Kiem_Tra_Mat_Khau_Cu(emp)); ''
+        console.log(kq)
+        if (kq == 'errorPassword') {
+            alert("Mật khẩu cũ không đúng!!!")
+        } else {
+            var acc = {};
+            acc.Password = Re_Password_New.value;
+            var emp = {};
+            emp.Account = acc;
+            emp.Email = object.Email;
+            Doi_Mat_Khau(emp)
+            alert("Đổi mật khẩu thành công !!!")
+        }
     }
-
-
 }
 
 function dang_xuat() {
