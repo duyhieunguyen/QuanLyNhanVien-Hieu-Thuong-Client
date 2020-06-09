@@ -57,3 +57,13 @@ function dang_xuat() {
     document.location.href = "/views/login.html"
 }
 
+/// Search thông tin
+$(document).ready(function () {
+    $("#search_info").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#content_home_employee tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+  });
+  

@@ -2764,10 +2764,11 @@ ul.inbox-pagination li {
 }
 
 .chat-room-head {
-    background:#4ECDC4;
+    /* background:#4ECDC4; */
     color: #FFFFFF;
     min-height: 70px;
     padding: 15px;
+    margin-top: -15px;
 }
 
 .chat-room-head h3 {
@@ -2995,6 +2996,14 @@ ul.chat-available-user li a:hover {
 .group-rom .second-part{
     width: 60%;
 }
+
+.second-part.full {
+    width: auto;
+    float: right;
+    background-color: deepskyblue;
+    border-radius: 5px;
+}
+
 
 .group-rom .third-part{
     width: 15%;

@@ -113,7 +113,15 @@
           <div class="col-sm-12 mt">
             <div class="content-panel">
               <table class="table table-hover">
-                <h4><i class="fa fa-angle-right"></i>Tài khoản nhân viên</h4>
+                     <div class="row">
+                  <div class="col-sm-8">
+                    <h4><i class="fa fa-angle-right"></i>Tài khoản nhân viên</h4>
+                  </div>
+                  <div class="col-sm-1" style="margin-top: 10px;font-size: 15px;text-align: right;">Search:</div>
+                  <div class="col-sm-3 chat-room-head bg ">
+                      <input id="search_info"  type="text;" oninput="setCustomValidity('')" placeholder="Thông tin tìm kiếm" class="form-control search-btn" autocomplete="on">           
+                  </div> 
+                </div>
                 <hr>
                 <thead>
                   <tr>
@@ -206,7 +214,7 @@
     <!--common script for all pages-->
     <script src="/lib/common-scripts.js"></script>
     <script src="/js/data.js"></script>
-    <script src="/js/home.js"></script>
+    <!-- <script src="/js/home.js"></script> -->
     <!--script for this page-->
 
 </body>
