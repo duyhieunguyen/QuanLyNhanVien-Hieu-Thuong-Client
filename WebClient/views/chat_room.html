@@ -104,11 +104,19 @@
         <div class="chat-room mt">
           <aside class="mid-side">
             <div class="chat-room-head">
-              <h3>Chat Room</h3>
-              <form action="#" class="pull-right position">
-                <input type="text" placeholder="Search" class="form-control search-btn ">
-              </form>
+
+              <div class="row pad3">
+                <div class="col-sm-8">
+                  <h3 style="color:#797979;">Chat Room</h3>
+                </div>
+                <div class="col-sm-1" style="margin-top: 10px;font-size: 15px;text-align: right ; color:#797979;">Search:</div>
+                <div class="col-sm-3 chat-room-head bg ">
+                    <input id="search_info"  type="text;" oninput="setCustomValidity('')" placeholder="Thông tin tìm kiếm" class="form-control search-btn" autocomplete="on">           
+                </div> 
+              </div>
+              
             </div>
+              <hr>
             <div id="dataScroll" class="card-body msg_card_body custom-scrollbar-css">
               <div id="content">
 

@@ -2776,6 +2776,7 @@ ul.inbox-pagination li {
     font-weight: 100;
     letter-spacing: 1px;
     display: inline-block;
+    color: black;
 }
 
 .chat-room-head .search-btn {
