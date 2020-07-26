@@ -37,14 +37,13 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var myName = object.FullName;
+var myName = object.Email;
 var today = new Date();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 firebase.database().ref("messages").on("child_added", function (snapshotMessage) {
 
   var html = "";
-  if (snapshotMessage.val().sender == myName) {
-
+  if (snapshotMessage.val().sender_id == myName) {
 
     html += ` <div class="group-rom" id='message-" + ${snapshotMessage.key} + "'>
 <div class="third-part">${snapshotMessage.val().time}</div>
@@ -68,7 +67,9 @@ function sendMessage() {
 
   // get message
   var message = document.getElementById("messaage").value;
-  var scroll = document.getElementById('dataScroll');
+  if(message.split("").length != 0){
+    console.log(message)
+    var scroll = document.getElementById('dataScroll');
  
     firebase.database().ref("messages").push().set({
       "sender": myName,
@@ -81,6 +82,8 @@ function sendMessage() {
     });
     messaage.value = "";
     scroll.scrollTop = scroll.scrollHeight;
+  }
+ 
 }
 
 // function deleteMessage(self) {
@@ -108,4 +111,10 @@ function sendMessage() {
 //   $(this).removeClass('first');
 //  $(this).siblings().addClass('first');
 // })
+
+function sendMess(event){
+  
+  event.preventDefault();
+  sendMessage();
+}
 

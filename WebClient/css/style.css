@@ -2866,11 +2866,11 @@ ul.chat-user li a:hover{
 
 .chat-room .mid-side footer {
     background: #f6f6f6;
-    padding: 15px;
-    height: 70px;
+    padding: 10px;
+    height: 50px;
     width: 75%;
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     border-right: 1px solid #E5E8EF;
 }
 
