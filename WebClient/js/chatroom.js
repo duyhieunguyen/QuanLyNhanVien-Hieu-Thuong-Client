@@ -39,7 +39,9 @@ firebase.initializeApp(firebaseConfig);
 
 var myEmail = object.Email;
 var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
 firebase.database().ref("messages").on("child_added", function (snapshotMessage) {
   var decodeMessage = Base64.decode(snapshotMessage.val().message)  
   var html = "";
@@ -76,7 +78,7 @@ function sendMessage() {
       // "message": message
       "message": Base64.encode(message),
       "sender_id": object.Email,
-      "time":time
+      "time":dateTime
       // "reciver_id": id
 
     });
