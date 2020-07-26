@@ -41,7 +41,7 @@
       <!--logo end-->
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="/views/login.html">Đăng xuất</a></li>
+          <li><a class="logout" href="#" onclick="dang_xuat()">Đăng xuất</a></li>
         </ul>
       </div>
     </header>
@@ -56,7 +56,7 @@
           <p class="centered">
             <a href="#"><img src="/images/thuong.jpg" class="img-circle" width="80"></a>
           </p>
-          <h5 class="centered">Thương</h5>
+          <h5 class="centered" id="FullName_Info"></h5>
           <li class="sub-menu">
             <a href="/views/home_employee.html">
               <i class="fa fa-th"></i>
@@ -109,21 +109,23 @@
                 <div class="col-sm-8">
                   <h3 style="color:#797979;">Chat Room</h3>
                 </div>
-                <div class="col-sm-1" style="margin-top: 10px;font-size: 15px;text-align: right ; color:#797979;">Search:</div>
+                <div class="col-sm-1" style="margin-top: 10px;font-size: 15px;text-align: right ; color:#797979;">
+                  Search:</div>
                 <div class="col-sm-3 chat-room-head bg ">
-                    <input id="search_info"  type="text;" oninput="setCustomValidity('')" placeholder="Thông tin tìm kiếm" class="form-control search-btn" autocomplete="on">           
-                </div> 
+                  <input id="search_info" type="text;" oninput="setCustomValidity('')" placeholder="Thông tin tìm kiếm"
+                    class="form-control search-btn" autocomplete="on">
+                </div>
               </div>
-              
-            </div>
-              <hr>
-            <div id="dataScroll" class="card-body msg_card_body custom-scrollbar-css">
-              <div id="content">
 
-                <div class="group-rom">
+            </div>
+            <hr>
+            <div id="dataScroll" class="card-body msg_card_body custom-scrollbar-css">
+              <div id="messages">
+
+                <!-- <div class="group-rom">
                   <div class="third-part">12:30</div>
                   <div class="second-part full" style="text-align: right;">
-                    <div class="font_1">Hi Mark, have ajahskjdhaskjdhsajdsadasdsadsadhsadjsahjdksahjdshakdhs  </div> </div>
+                    <div class="font_1" style="color:white;">Hi Mark, have ajahskjdhaskjdhsajdsadasdsadsadhsadjsahjdksahjdshakdhs  </div> </div>
                 </div>
 
 
@@ -131,14 +133,14 @@
                   <div class="first-part odd">Thương Nguyễn</div>
                   <div class="second-part" style="text-align: left;">Hi Mark, have a minute?</div>
                   <div class="third-part" style="text-align: right;">12:30</div>
-                </div>
-              
-                
+                </div> -->
+
+
               </div>
             </div>
             <footer>
               <div class="chat-txt">
-                <input type="text" class="form-control">
+                <input type="text" id="messaage" placeholder="Type a message" class="form-control">
               </div>
               <div class="btn-group hidden-sm hidden-xs">
                 <button type="button" class="btn btn-white"><i class="fa fa-meh-o"></i></button>
@@ -156,42 +158,31 @@
               <h4 class="pull-left">Team Members</h4>
               <a href="#" class="btn btn-theme04 pull-right">+ Invite</a>
             </div>
-            <ul class="chat-available-user">
+            <ul class="chat-available-user" id="iconEmployeeJoin">
+
               <li>
                 <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-02.jpg" width="32">
-                  Paul Brown
-                  <span class="text-muted">1h:02m</span>
-                </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-05.jpg" width="32">
-                  David Duncan
-                  <span class="text-muted">1h:08m</span>
-                </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-07.jpg" width="32">
-                  Laura Smith
-                  <span class="text-muted">1h:10m</span>
-                </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-08.jpg" width="32">
-                  Julia Schultz
-                  <span class="text-muted">3h:00m</span>
-                </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-01.jpg" width="32">
+                  <img class="img-circle" src="/images/thuong.jpg" width="32">
                   Frank Arias
-                  <span class="text-muted">4h:22m</span>
+
                 </a>
               </li>
+              <li>
+                <a href="chat_room.html">
+                  <img class="img-circle" src="/images/thuong.jpg" width="32">
+                  Frank Arias
+
+                </a>
+              </li>
+              <li>
+                <a href="chat_room.html">
+                  <img class="img-circle" src="/images/thuong.jpg" width="32">
+                  Frank Arias
+
+                </a>
+              </li>
+
+
             </ul>
           </aside>
         </div>
@@ -211,6 +202,7 @@
           <i class="fa fa-angle-up"></i>
         </a>
     </footer>
+    <input id="content_home_employee" hidden/>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
@@ -219,10 +211,17 @@
   <script class="include" type="text/javascript" src="/lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="/lib/jquery.scrollTo.min.js"></script>
   <script src="/lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
   <!--common script for all pages-->
   <script src="/lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script src="/js/data.js"></script>
   <script src="/js/chatroom.js"></script>
+  <script src="/js/home.js"></script>
+
+
 
 </body>
 

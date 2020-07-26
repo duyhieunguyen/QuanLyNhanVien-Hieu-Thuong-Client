@@ -9,6 +9,7 @@ if (object) {
 else {
     document.location.href = "/views/login.html"
 }
+document.getElementById("FullName_Info").innerHTML = object.FullName
 
 function DongYTao() {
     if (FullName.value == null || FullName.value.trim() == "") {

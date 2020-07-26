@@ -47,7 +47,7 @@
 
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="/views/login.html">Đăng xuất</a></li>
+          <li><a class="logout" href="#" onclick="dang_xuat()">Đăng xuất</a></li>
         </ul>
       </div>
     </header>
@@ -63,7 +63,7 @@
           <p class="centered">
             <a href="#"><img src="/images/thuong.jpg" class="img-circle" width="80"></a>
           </p>
-          <h5 class="centered">Thương</h5>
+          <h5 class="centered" id="FullName_Info"></h5>
           <li class="sub-menu">
             <a href="/views/home_employee.html" class="active">
               <i class="fa fa-th"></i>
@@ -189,6 +189,7 @@
         </a>
       </div>
     </footer>
+    <input id="content_home_employee" hidden/>
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
@@ -203,6 +204,8 @@
   <script src="/lib/form-validation-script.js"></script>
   <script src="/js/data.js"></script>
   <script src="/js/add_employee.js"></script>
+  <script src="/js/home.js"></script>
+
 
 </body>
 

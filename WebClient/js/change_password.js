@@ -8,6 +8,7 @@ if (object) {
 else {
     document.location.href = "/views/login.html"
 }
+document.getElementById("FullName_Info").innerHTML = object.FullName
 
 function Dong_Y_Doi_Mat_Khau() {
     var kq;
