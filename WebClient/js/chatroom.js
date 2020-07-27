@@ -67,6 +67,7 @@ firebase
   </div>`;
     }
     document.getElementById("messages").innerHTML += html;
+    scrollToBottom();
   });
 function sendMessage() {
   // get message
@@ -116,22 +117,21 @@ function sendMessage() {
 // })
 //
 
-
 /// sự kiện cuộn chuột
 function scrollToBottom() {
   const messages = document.getElementById("messages");
-  messages.scrollTop = messages.scrollHeight
+  messages.scrollTop = messages.scrollHeight;
 }
-thoigian=setInterval(scrollToBottom, 1000);
-$(document).ready(function() {
-  $("#messages").scroll(function() {
-   clearInterval(thoigian)
+thoigian = setInterval(scrollToBottom, 1000);
+$(document).ready(function () {
+  $("#messages").scroll(function () {
+    clearInterval(thoigian);
   });
 });
 function sendMess(event) {
   event.preventDefault();
   sendMessage();
-  scrollToBottom()
+  scrollToBottom();
 }
 //// mã hóa và giải mã Base 64
 var Base64 = {
