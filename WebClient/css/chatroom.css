@@ -42,7 +42,7 @@ input::placeholder {
 
 .custom-scrollbar-css {
   overflow-y: scroll;
-  height: 450px;
+  height: 400px;
 }
 
 /* scrollbar width */

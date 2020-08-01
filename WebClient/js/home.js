@@ -2,7 +2,6 @@
 var object = JSON.parse(localStorage.getItem("user"))
 if (object) {
     if (object.Account.Role == "admin") {
-        console.log(object.Role);
         load_data();
     }
 }

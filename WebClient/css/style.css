@@ -2721,6 +2721,11 @@ ul.inbox-pagination li {
     position: relative;
 }
 
+div#messages {
+    overflow: auto;
+    height: 400px;
+}
+
 .chat-room aside {
     display: table-cell;
     float: none;
@@ -3352,7 +3357,7 @@ ul.chat-available-user li a:hover {
 }
 
 .site-min-height {
-    min-height: 900px;
+    min-height: 600px;
 }
 
 
