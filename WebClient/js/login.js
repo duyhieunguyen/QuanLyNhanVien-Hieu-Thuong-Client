@@ -70,6 +70,7 @@ function loginGoogle() {
     });
 }
 
+
 function dang_ky_google() {
     var acc = {};
     //acc.Password = md5(Password.value);
