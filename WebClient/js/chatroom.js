@@ -73,7 +73,6 @@ function sendMessage() {
   // get message
   var message = document.getElementById("messaage").value;
   if (message.split("").length != 0) {
-    console.log(message);
     firebase
       .database()
       .ref("messages")
