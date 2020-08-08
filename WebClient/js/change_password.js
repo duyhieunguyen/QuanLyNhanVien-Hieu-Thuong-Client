@@ -31,11 +31,29 @@ function Dong_Y_Doi_Mat_Khau() {
         if (kq == 'errorPassword') {
             alert("Mật khẩu cũ không đúng!!!")
         } else {
+
             var acc = {};
             acc.Password = Re_Password_New.value;
+            acc.Role = "admin"
+            acc.UserName = Email.value;
+            
+            var sch = {}
+            sch.color = "red";
+            sch.content = "Helloworld";
+    
             var emp = {};
             emp.Account = acc;
+            emp.Address = ""
+            emp.BirthDate = ""
+            emp.DepartmentName = ""
             emp.Email = object.Email;
+            emp.EmployeeId = ""
+            emp.FullName = FullName.value;
+            emp.Image = ""
+            emp.PhoneNumber = ""
+            emp.PositionName = ""
+            emp.Schedules = [];
+            emp.Schedules.push(sch);
             Doi_Mat_Khau(emp)
             alert("Đổi mật khẩu thành công !!!")
         }

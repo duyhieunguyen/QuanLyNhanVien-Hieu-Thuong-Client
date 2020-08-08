@@ -33,20 +33,24 @@ var firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 function loginGoogle() {
-    
+
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().languageCode = 'vi';
     // To apply the default browser preference instead of explicitly setting it.
     // firebase.auth().useDeviceLanguage();
 
     firebase.auth().signInWithPopup(provider).then(function (result) {
+        
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
+
         // The signed-in user info.
-        var user = result.user;
+        var getUser = result.user;
+
         var obj = {}
-        obj.Email = user.email
+        obj.Email = getUser.email
         var kq = JSON.parse(Dang_Nhap_Google(obj));
         if (kq != 'loginGoogleFalse') {
             localStorage.setItem("user", JSON.stringify(kq))
@@ -55,7 +59,7 @@ function loginGoogle() {
         }
         else {
             document.getElementById("modalRegisterGoogle").click();
-            EmailGoogle.value = user.email;
+            EmailGoogle.value = getUser.email;
 
         }
     }).catch(function (error) {
@@ -72,18 +76,28 @@ function loginGoogle() {
 
 
 function dang_ky_google() {
+
     var acc = {};
     //acc.Password = md5(Password.value);
     acc.Password = PasswordGoogle.value;
-    acc.Role = "user"
+    acc.Role = "admin"
     acc.UserName = EmailGoogle.value;
+
     var sch = {}
-    sch.color = "do";
-    sch.content = "oke";
+    sch.color = "";
+    sch.content = "";
+
     var emp = {};
     emp.Account = acc;
+    emp.Address = ""
+    emp.BirthDate = ""
+    emp.DepartmentName = ""
     emp.Email = EmailGoogle.value;
+    emp.EmployeeId = ""
     emp.FullName = FullNameGoogle.value;
+    emp.Image = ""
+    emp.PhoneNumber = ""
+    emp.PositionName = ""
     emp.Schedules = [];
     emp.Schedules.push(sch);
     Dang_Ky_Google(emp);
