@@ -13,8 +13,8 @@ function dang_nhap() {
     var kq = JSON.parse(Dang_Nhap(obj))
     if (kq != 'loginfalse') {
         localStorage.setItem("user", JSON.stringify(kq))
-        alert("Đăng nhập thành công!!!")
         document.location.href = "/views/home_employee.html"
+        alert("Đăng nhập thành công!!!")
     } else {
         alert("Đăng nhập thất bại!!!")
     }
