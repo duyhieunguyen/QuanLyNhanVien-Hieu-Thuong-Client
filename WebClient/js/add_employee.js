@@ -27,8 +27,8 @@ function DongYTao() {
         acc.Role = Role.value;
         acc.UserName = Email.value;
         var sch = {}
-        sch.color = "red";
-        sch.content = "Helloworld";
+        sch.color = "";
+        sch.content = "";
         var emp = {};
         emp.Account = acc;
         emp.Address = ""

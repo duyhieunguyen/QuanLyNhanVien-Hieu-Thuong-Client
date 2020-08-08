@@ -31,11 +31,11 @@ function DongYThem() {
         var acc = {};
         //acc.Password = md5(Password.value);
         acc.Password = Password.value;
-        acc.Role = "admin"
+        acc.Role = "user"
         acc.UserName = Email.value;
         var sch = {}
-        sch.color = "red";
-        sch.content = "Helloworld";
+        sch.color = "";
+        sch.content = "";
         var emp = {};
         emp.Account = acc;
         emp.Address = ""

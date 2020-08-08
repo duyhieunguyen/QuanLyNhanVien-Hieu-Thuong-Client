@@ -42,7 +42,7 @@ function loginGoogle() {
     // firebase.auth().useDeviceLanguage();
 
     firebase.auth().signInWithPopup(provider).then(function (result) {
-        
+
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
 
@@ -80,7 +80,7 @@ function dang_ky_google() {
     var acc = {};
     //acc.Password = md5(Password.value);
     acc.Password = PasswordGoogle.value;
-    acc.Role = "admin"
+    acc.Role = "user"
     acc.UserName = EmailGoogle.value;
 
     var sch = {}
