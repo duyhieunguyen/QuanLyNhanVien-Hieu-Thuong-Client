@@ -7,15 +7,16 @@ if (object) {
 }
 
 var html = "";
-Doc_Danh_Sach_Nhan_Vien().forEach((element) => {
-  if (object.Email.trim() != element.Email) {
-    html += `  <li>
+Doc_Danh_Sach_Nhan_Vien().map((element) => {
+  if (object.Account.Role.trim() == element.Account.Role) {
+    if (object.Email.trim() != element.Email) {
+      html += `  <li>
     <a href="chat_room.html">
-      <img class="img-circle" src="/images/thuong.jpg" width="32">
-      ${element.FullName}
-
+      <img class="img-circle" src="/images/hieu.jpg" width="32">
+      ${element.FullName} <span aria-label="Đang hoạt động" style="background: rgb(66, 183, 42); border-radius: 50%; display: inline-block; height: 10px; margin-right: 30px; width: 10px; float: right; margin-top: 12px;"></span>
     </a>
   </li>`;
+    }
   }
 });
 iconEmployeeJoin.innerHTML = html;
