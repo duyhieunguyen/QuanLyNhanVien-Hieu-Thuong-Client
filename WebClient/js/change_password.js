@@ -34,12 +34,12 @@ function Dong_Y_Doi_Mat_Khau() {
 
             var acc = {};
             acc.Password = Re_Password_New.value;
-            acc.Role = "admin"
+            acc.Role = object.Role;
             acc.UserName = Email.value;
             
             var sch = {}
-            sch.color = "red";
-            sch.content = "Helloworld";
+            sch.color = "";
+            sch.content = "";
     
             var emp = {};
             emp.Account = acc;
