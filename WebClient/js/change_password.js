@@ -31,7 +31,6 @@ function Dong_Y_Doi_Mat_Khau() {
         if (kq == 'errorPassword') {
             alert("Mật khẩu cũ không đúng!!!")
         } else {
-
             var acc = {};
             acc.Password = Re_Password_New.value;
             acc.Role = object.Role;
