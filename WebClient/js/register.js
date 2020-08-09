@@ -12,7 +12,21 @@ showBtn.addEventListener("click", function () {
     showBtn.style.color = "#222";
   }
 });
+const pass_field1 = document.querySelector(".pass-key1");
+const showBtn1 = document.querySelector(".show1");
+showBtn1.addEventListener("click", function () {
+  if (pass_field1.type === "password") {
+    pass_field1.type = "text";
+    showBtn1.textContent = "";
+    showBtn1.style.color = "#3498db";
+  } else {
+    pass_field1.type = "password";
+    showBtn1.textContent = "";
+    showBtn1.style.color = "#222";
+  }
+});
 
+////////////////////
 var encryptedAES;
 var kq;
 

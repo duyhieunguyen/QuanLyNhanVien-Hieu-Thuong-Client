@@ -4,6 +4,12 @@ if (object) {
     if (object.Account.Role == "admin") {
         load_data();
     }
+    else
+    {
+        $(document).ready(function () {
+            $("#data").hide();
+        });
+    }
 }
 else {
     document.location.href = "/views/login.html"

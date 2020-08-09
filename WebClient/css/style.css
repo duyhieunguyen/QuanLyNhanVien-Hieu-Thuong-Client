@@ -73,6 +73,94 @@ a, a:hover, a:focus {
 	outline: none !important;
 	text-decoration: none;
 }
+.noidungnhochinh {
+    width: 550px;
+    height: 400px;
+    position: absolute;
+    top: 52%;
+    left: 0%;
+    z-index: 4;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.noidungchinh:hover .noidungnhochinh {
+    opacity: 1;
+}
+
+.tieudechinh {
+    position: absolute;
+    top: 40%;
+    left: 37%;
+    color: white;
+    font-size: 30px;
+    font-family: tahoma;
+    z-index: 4;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.noidungchinh:hover .tieudechinh {
+    transform: translateY(-20px);
+}
+
+.vuongchinh {
+    width: 80%;
+    height: 80%;
+    border: solid 2px white;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 3;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.noidungchinh:hover .vuongchinh {
+    transform: scale(1);
+}
+
+
+.gradianchinh {
+    width: 550px;
+    height: 300px;
+    background: linear-gradient(45deg, #22682a 0%,#9b4a1b 40%,#3a342a 100%);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.noidungchinh:hover .gradianchinh {
+    opacity: 0.5;
+}
+
+.xamchinh {
+    width: 550px;
+    height: 300px;
+    background-color: #00000054;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.noidungchinh img {
+    width: 550px;
+    height: 300px;
+}
+
+.noidungchinh {
+    width: 550px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
 
 
 

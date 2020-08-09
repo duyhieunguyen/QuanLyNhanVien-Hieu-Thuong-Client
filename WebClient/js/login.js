@@ -2,10 +2,9 @@ var object = JSON.parse(localStorage.getItem("user"));
 if (object) {
     if (object.Account.Role == "admin") {
         console.log(object.Account.Role)
-        document.location.href = "/views/home_employee.html"
+        document.location.href = "/views/giaodien.html"
     }
 }
-
 function dang_nhap() {
     var obj = {}
     obj.Email = UserName.value
@@ -13,8 +12,8 @@ function dang_nhap() {
     var kq = JSON.parse(Dang_Nhap(obj))
     if (kq != 'loginfalse') {
         localStorage.setItem("user", JSON.stringify(kq))
+        document.location.href = "/views/giaodien.html"
         alert("Đăng nhập thành công!!!")
-        document.location.href = "/views/home_employee.html"
     } else {
         alert("Đăng nhập thất bại!!!")
     }
@@ -55,7 +54,7 @@ function loginGoogle() {
         if (kq != 'loginGoogleFalse') {
             localStorage.setItem("user", JSON.stringify(kq))
             alert("Đăng nhập thành công!!!")
-            document.location.href = "/views/home_employee.html"
+            document.location.href = "/views/giaodien.html"
         }
         else {
             document.getElementById("modalRegisterGoogle").click();
@@ -107,7 +106,7 @@ function dang_ky_google() {
     if (kq != 'loginGoogleFalse') {
         localStorage.setItem("user", JSON.stringify(kq))
         alert("Đăng nhập thành công!!!")
-        document.location.href = "/views/home_employee.html"
+        document.location.href = "/views/giaodien.html"
     }
 
 }
