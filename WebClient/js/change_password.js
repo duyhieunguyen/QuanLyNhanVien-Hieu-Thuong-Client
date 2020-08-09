@@ -19,15 +19,15 @@ function Dong_Y_Doi_Mat_Khau() {
     } else if (Re_Password_New.value == null || Re_Password_New.value.trim() == "") {
         alert("Vui lòng nhập Re_Password mới !!!");
     } else if (Password_New.value.trim() != Re_Password_New.value.trim()) {
-        alert("Mật khẩu không khớp !!!")
+        alert("Mật khẩu không khớp !!!");
     } else {
         var acc = {};
         acc.Password = Password.value;
         var emp = {};
         emp.Account = acc;
         emp.Email = object.Email;
-        kq = JSON.parse(Kiem_Tra_Mat_Khau_Cu(emp)); ''
-        console.log(kq)
+        kq = JSON.parse(Kiem_Tra_Mat_Khau_Cu(emp)); 
+        console.log(kq);
         if (kq == 'errorPassword') {
             alert("Mật khẩu cũ không đúng!!!")
         } else {
@@ -35,32 +35,32 @@ function Dong_Y_Doi_Mat_Khau() {
             var acc = {};
             acc.Password = Re_Password_New.value;
             acc.Role = object.Role;
-            acc.UserName = Email.value;
+            acc.UserName = object.Email;
             
-            var sch = {}
+            var sch = {};
             sch.color = "";
             sch.content = "";
     
             var emp = {};
             emp.Account = acc;
-            emp.Address = ""
-            emp.BirthDate = ""
-            emp.DepartmentName = ""
+            emp.Address = "";
+            emp.BirthDate = "";
+            emp.DepartmentName = "";
             emp.Email = object.Email;
-            emp.EmployeeId = ""
-            emp.FullName = FullName.value;
-            emp.Image = ""
-            emp.PhoneNumber = ""
-            emp.PositionName = ""
+            emp.EmployeeId = "";
+            emp.FullName = object.FullName;
+            emp.Image = "";
+            emp.PhoneNumber = "";
+            emp.PositionName = "";
             emp.Schedules = [];
             emp.Schedules.push(sch);
-            Doi_Mat_Khau(emp)
-            alert("Đổi mật khẩu thành công !!!")
+            Doi_Mat_Khau(emp);
+            alert("Đổi mật khẩu thành công !!!");
         }
     }
 }
 
 function dang_xuat() {
-    localStorage.clear()
-    document.location.href = "/views/login.html"
+    localStorage.clear();
+    document.location.href = "/views/login.html";
 }
