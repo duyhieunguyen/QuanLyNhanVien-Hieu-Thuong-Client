@@ -6,10 +6,10 @@ if (object) {
     }
 }
 function dang_nhap() {
-    var obj = {}
-    obj.Email = UserName.value
-    obj.Password = Password.value
-    var kq = JSON.parse(Dang_Nhap(obj))
+    var obj = {};
+    obj.Email = UserName.value;
+    obj.Password = Password.value;
+    var kq = JSON.parse(Dang_Nhap(obj));
     if (kq != 'loginfalse') {
         localStorage.setItem("user", JSON.stringify(kq))
         document.location.href = "/views/giaodien.html"
