@@ -27,7 +27,6 @@ function Dong_Y_Doi_Mat_Khau() {
         emp.Account = acc;
         emp.Email = object.Email;
         kq = JSON.parse(Kiem_Tra_Mat_Khau_Cu(emp)); 
-        console.log(kq);
         if (kq == 'errorPassword') {
             alert("Mật khẩu cũ không đúng!!!")
         } else {
