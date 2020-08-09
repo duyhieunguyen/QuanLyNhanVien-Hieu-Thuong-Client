@@ -2,12 +2,18 @@
 var object = JSON.parse(localStorage.getItem("user"))
 if (object) {
     if (object.Account.Role == "admin") {
-        load_data();
+        $(document).ready(function () {
+            $("#hinhadmin").show();
+            $("#hinhuser").hide();
+        });
+            load_data();
     }
     else
     {
         $(document).ready(function () {
             $("#data").hide();
+            $("#hinhadmin").hide();
+            $("#hinhuser").show();
         });
     }
 }
